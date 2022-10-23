@@ -7,7 +7,7 @@ def new_element():
     z = input('Введите код товара: ')
     x = input('Введите название товара: ')
     y = input('Введите цену: ')
-    return  (z, x, y)
+    return z, x, y
 
 
 shop = [('001', 'ручка', 1.9), ('002', 'карандаш', 2.1), ('003', 'резинка', 10.25),
@@ -16,11 +16,9 @@ while True:
     print('\nКаталог товаров:')
     for i in shop:
         print(i)
-    x = input('Хотите ли добавить новый элемент?(Да/Нет)')
-    x = x.strip().lower()
-    if x == 'да':
+    ask = input('Хотите ли добавить новый элемент?(Да/Нет)').strip().lower()
+
+    if ask == 'да':
         shop.insert(0, new_element())
     else:
         break
-
-
